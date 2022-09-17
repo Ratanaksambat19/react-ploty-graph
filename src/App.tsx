@@ -9,27 +9,69 @@ import { WaterfallChart } from './components/WaterfallChart';
 import { WPHChart } from './components/WPHChart';
 
 function App() {
+  const [activeTab, setActiveTab] = React.useState('chronology');
+
+  const onRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setActiveTab(event.target.value);
+  }
+
   return (
     <div className="App">
-      <ChronologyChart axisData={[
-        {
-          x: ['2013-10-04 22:23:00', '2013-10-08 22:23:00', '2013-10-12 22:23:00', '2013-10-15 22:23:00', '2013-10-19 22:23:00', '2013-10-23 22:23:00', '2013-10-27 22:23:00', '2013-10-31 22:23:00', '2013-11-04 22:23:00', '2013-11-08 22:23:00', '2013-11-12 22:23:00', '2013-11-15 22:23:00', '2013-11-19 22:23:00', '2013-11-23 22:23:00', '2013-11-27 22:23:00', '2013-12-01 22:23:00', '2013-12-05 22:23:00', '2013-12-09 22:23:00', '2013-12-13 22:23:00', '2013-12-17 22:23:00', '2013-12-21 22:23:00', '2013-12-25 22:23:00', '2013-12-29 22:23:00', '2014-01-02 22:23:00', '2014-01-06 22:23:00', '2014-01-10 22:23:00', '2014-01-14 22:23:00', '2014-01-18 22:23:00', '2014-01-22 22:23:00', '2014-01-26 22:23:00', '2014-01-30 22:23:00', '2014-02-03 22:23:00', '2014-02-07 22:23:00', '2014-02-11 22:23:00', '2014-02-15 22:23:00', '2014-02-19 22:23:00', '2014-02-23 22:23:00', '2014-02-27 22:23:00', '2014-03-03 22:23:00', '2014-03-07 22:'],
-          y: [1000, 22000, 43000, 6000, 76000, 80000],
-        },
-        {
-          x: ['2013-10-04 22:23:00', '2013-10-08 22:23:00', '2013-10-12 22:23:00', '2013-10-15 22:23:00', '2013-10-19 22:23:00', '2013-10-23 22:23:00', '2013-10-27 22:23:00', '2013-10-31 22:23:00', '2013-11-04 22:23:00', '2013-11-08 22:23:00', '2013-11-12 22:23:00', '2013-11-15 22:23:00', '2013-11-19 22:23:00', '2013-11-23 22:23:00', '2013-11-27 22:23:00', '2013-12-01 22:23:00', '2013-12-05 22:23:00', '2013-12-09 22:23:00', '2013-12-13 22:23:00', '2013-12-17 22:23:00', '2013-12-21 22:23:00', '2013-12-25 22:23:00', '2013-12-29 22:23:00', '2014-01-02 22:23:00', '2014-01-06 22:23:00', '2014-01-10 22:23:00', '2014-01-14 22:23:00', '2014-01-18 22:23:00', '2014-01-22 22:23:00', '2014-01-26 22:23:00', '2014-01-30 22:23:00', '2014-02-03 22:23:00', '2014-02-07 22:23:00', '2014-02-11 22:23:00', '2014-02-15 22:23:00', '2014-02-19 22:23:00', '2014-02-23 22:23:00', '2014-02-27 22:23:00', '2014-03-03 22:23:00', '2014-03-07 22:'],
-          y: [14000, 32000, 41000, 5000, 86000, 90000],
-        },
-      ]} />
 
-      <PartsOutChart />
-
-      <MachineStateChart />
-      <StaionStatesChart />
-      <WPHChart />
-      <WaterfallChart />
-      <MachineStatisticTable />
-    </div>
+      <div onChange={onRadioChange}>
+        <input type="radio" id="chronology" name="fav_language" value="chronology" />
+        <label htmlFor="chronology">
+          Chronology
+        </label>
+        <input type="radio" id="partsout" name="fav_language" value="partsout" />
+        <label htmlFor="partsout" >Partouts</label >
+        <input type="radio" id="machineStete" name="fav_language" value="machineStete" />
+        <label htmlFor="machineStete" > Machine state</label >
+        <input type="radio" id="stationState" name="fav_language" value="stationState" />
+        <label htmlFor="stationState" >StaionStatesChart</label >
+        <input type="radio" id="wph" name="fav_language" value="wph" />
+        <label htmlFor="wph" >WPHChart</label >
+        <input type="radio" id="waterfall" name="fav_language" value="waterfall" />
+        <label htmlFor="waterfall" >WaterfallChart</label >
+        <input type="radio" id="machineStateTable" name="fav_language" value="machineStateTable" />
+        <label htmlFor="machineStateTable" >MachineStateChart</label >
+      </div>
+      <div id='chronology'>
+        {
+          activeTab === 'chronology' && <ChronologyChart />
+        }
+      </div>
+      <div id='partsout'>
+        {
+          activeTab === 'partsout' && <PartsOutChart />
+        }
+      </div>
+      <div id='machineState'>
+        {
+          activeTab === 'machineState' && <MachineStateChart />
+        }
+      </div>
+      <div id='stationState'>
+        {
+          activeTab === 'stationState' && <StaionStatesChart />
+        }
+      </div>
+      <div id='wph'>
+        {
+          activeTab === 'wph' && <WPHChart />
+        }
+      </div>
+      <div id='waterfall'>
+        {
+          activeTab === 'waterfall' && <WaterfallChart />
+        }
+      </div>
+      <div id='machineStateTable'>
+        {
+          activeTab === 'machineStateTable' && <MachineStatisticTable />
+        }
+      </div>
+    </div >
   );
 }
 
