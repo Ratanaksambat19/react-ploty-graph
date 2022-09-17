@@ -19,14 +19,14 @@ function App() {
     <div className="App">
 
       <div onChange={onRadioChange}>
-        <input type="radio" id="chronology" name="fav_language" value="chronology" />
+        <input type="radio" id="chronology" name="fav_language" value="chronology" defaultChecked />
         <label htmlFor="chronology">
           Chronology
         </label>
         <input type="radio" id="partsout" name="fav_language" value="partsout" />
         <label htmlFor="partsout" >Partouts</label >
-        <input type="radio" id="machineStete" name="fav_language" value="machineStete" />
-        <label htmlFor="machineStete" > Machine state</label >
+        <input type="radio" id="machineState" name="fav_language" value="machineState" />
+        <label htmlFor="machineState" > Machine state</label >
         <input type="radio" id="stationState" name="fav_language" value="stationState" />
         <label htmlFor="stationState" >StaionStatesChart</label >
         <input type="radio" id="wph" name="fav_language" value="wph" />
