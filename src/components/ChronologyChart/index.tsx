@@ -17,7 +17,7 @@ export const ChronologyChart = () => {
       data={axisData}
       layout={{
         width: 1000, height: 800,
-        title: 'A Fancy Plot',
+        title: 'Parts Out - Chronology',
         yaxis: { tickprefix: '$' },
         hovermode: 'x unified',
       }}

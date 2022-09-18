@@ -14,10 +14,10 @@ export const WPHChart = () => {
     var trace1: Data = {
         x: xValue,
         y: yValue,
+        name: 'Nest 1',
         type: 'bar',
         text: yValue.map(String),
         textposition: 'outside',
-        hoverinfo: 'none',
         opacity: 0.5,
         marker: {
             color: '#6E5676',
@@ -25,56 +25,72 @@ export const WPHChart = () => {
                 color: 'rgb(8,48,107)',
                 width: 1.5
             }
-        }
+        },
+        hovertemplate:
+            "<b>Nest 1</b><br><br>" +
+            "%{y}, %{x}" +
+            "<extra></extra>"
     };
 
     var trace2: Data = {
         x: xValue,
         y: yValue2,
+        name: 'Nest 2',
         type: 'bar',
         text: yValue2.map(String),
         textposition: 'outside',
-        hoverinfo: 'none',
         marker: {
             color: '#FFE2AA',
             line: {
                 color: 'rgb(8,48,107)',
                 width: 1.5
             }
-        }
+        },
+        hovertemplate:
+            "<b>Nest 2</b><br><br>" +
+            "%{y}, %{x}" +
+            "<extra></extra>"
     };
 
     var trace3: Data = {
         x: xValue,
         y: yValue3,
+        name: 'Nest 3',
         type: 'bar',
         text: yValue3.map(String),
         textposition: 'outside',
-        hoverinfo: 'none',
         marker: {
             color: '#657880',
             line: {
                 color: 'rgb(8,48,107)',
                 width: 1.5
             }
-        }
+        },
+        hovertemplate:
+            "<b>Nest 3</b><br><br>" +
+            "%{y}, %{x}" +
+            "<extra></extra>"
     };
 
 
     var trace4: Data = {
         x: xValue,
         y: yValue4,
+        name: 'Nest 4',
         type: 'bar',
         text: yValue4.map(String),
         textposition: 'outside',
-        hoverinfo: 'none',
         marker: {
             color: '#DEE5E5',
             line: {
                 color: 'rgb(8,48,107)',
                 width: 1.5
             }
-        }
+        },
+        hovertemplate:
+            "<b>Nest 4</b><br><br>" +
+            "%{y}, %{x}" +
+            "<extra></extra>"
     };
 
 
@@ -91,6 +107,14 @@ export const WPHChart = () => {
                 yaxis: {
 
                 },
+                hovermode: 'closest',
+                hoverlabel: {
+                    bgcolor: 'white',
+                    font: {
+                        color: 'black'
+                    }
+                },
+                // hovermode: 'x unified',
                 // annotations: [
                 //     {
                 //         x: 13.0,

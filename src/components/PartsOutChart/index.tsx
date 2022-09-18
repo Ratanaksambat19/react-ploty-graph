@@ -4,7 +4,7 @@ import Plot from 'react-plotly.js';
 export const PartsOutChart = () => {
 
     const yvalue = ['Bad', 'Good']
-    const xvalue = [1000000000, 2000000000]
+    const xvalue = [490000000, 2300000000]
     return (
         <Plot
             data={[
@@ -14,14 +14,18 @@ export const PartsOutChart = () => {
                     x: xvalue,
                     y: yvalue,
                     text: xvalue.map(String),
-                    textposition: 'outside',
+                    textposition: 'inside',
                     orientation: 'h',
                     marker: {
                         color: ['red', 'green'],
                     },
                 },
             ]}
-            layout={{ width: 1000, height: 300, title: 'A Fancy Plot' }}
+            layout={{
+                width: 1000, height: 300, title: 'Part Out - Total', xaxis: {
+                    rangemode: 'nonnegative',
+                }
+            }}
         />
     )
 }
