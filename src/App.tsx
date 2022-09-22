@@ -1,5 +1,7 @@
+import { Data, Gauge } from 'plotly.js';
 import React from 'react';
 import './App.css';
+import { GaugeChart } from './components/Chart/GaugeChart';
 import { ChronologyChart } from './components/ChronologyChart';
 import { MachineStateChart } from './components/MachineStateChart';
 import { MachineStatisticTable } from './components/MachineStatisticTable';
@@ -8,6 +10,8 @@ import { StaionStatesChart } from './components/StationStatesChart';
 import { WaterfallChart } from './components/WaterfallChart';
 import { WPHChart } from './components/WPHChart';
 // import { MachineStateChart, MachineStatisticTable, PartsOutChronology, PartsOutTotal, StaionStatesChart, WaterfallChart, WPHChart } from './components/Chart';
+
+import { gaugeData } from './_MockData/gaugeData';
 
 function App() {
   const [activeTab, setActiveTab] = React.useState('chronology');
@@ -72,6 +76,7 @@ function App() {
           activeTab === 'machineStateTable' && <MachineStatisticTable />
         }
       </div>
+      <GaugeChart data={gaugeData as Data[]}/>
     </div >
   );
 }
