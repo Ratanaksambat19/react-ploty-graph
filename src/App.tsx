@@ -7,6 +7,7 @@ import { PartsOutChart } from './components/PartsOutChart';
 import { StaionStatesChart } from './components/StationStatesChart';
 import { WaterfallChart } from './components/WaterfallChart';
 import { WPHChart } from './components/WPHChart';
+// import { MachineStateChart, MachineStatisticTable, PartsOutChronology, PartsOutTotal, StaionStatesChart, WaterfallChart, WPHChart } from './components/Chart';
 
 function App() {
   const [activeTab, setActiveTab] = React.useState('chronology');
